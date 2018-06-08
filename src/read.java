@@ -4,15 +4,14 @@ import java.awt.Color;
 public class read {
 
     public static void main(String[] args) {
-        read readme = new read("/home/linux/Documents/githubfolder/pictures/newphoto.png");
+        read readme = new read("/newphoto.png");
         System.out.println(readme.extractInformation());
     }
 
-    protected Picture picture;
-    protected LinkedList<point> pointsList;
-    protected LinkedList<String> allBits;
-    protected LinkedList<String> hiddenInfo;
-    public static final int LSB_CONST = 2;
+    private Picture picture;
+    private LinkedList<point> pointsList;
+    private LinkedList<String> hiddenInfo;
+    private static final int LSB_CONST = 2;
 
     /* Constructor */
     public read(String pictureLocation) {
@@ -20,14 +19,13 @@ public class read {
             throw new IllegalArgumentException("picture location input is not valid");
         this.pointsList = new LinkedList<point>();
         this.picture = new Picture(pictureLocation);
-        this.allBits = new LinkedList<String>();
         this.hiddenInfo = new LinkedList<String>();
     }
 
     /**
      * collects a string from the lsb of an image
      **/
-    public String extractInformation() {
+    protected String extractInformation() {
         generatePoints(); //create points order to read from linearly
         String returnedInfo = ""; //create an empty string that we will be using to return chars
         point currentPoint;
@@ -57,7 +55,7 @@ public class read {
      * Notice that we need 4 values in "hiddenInfo" to create a letter, but each color only gives us
      * 3 values
      **/
-    public void addColorToHiddenInfo(Color color) {
+    private void addColorToHiddenInfo(Color color) {
         if (color == null)
             throw new IllegalArgumentException("Color is null");
 
@@ -76,7 +74,7 @@ public class read {
     /**
      * generates points to be used when reading
      **/
-    public boolean generatePoints() {
+    private boolean generatePoints() {
         pointsList.clear(); // make sure linkedlist is clear
         for (int x = 0; x < picture.width(); x++)
             for (int y = 0; y < picture.height(); y++)

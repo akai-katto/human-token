@@ -9,22 +9,19 @@ public class write {
     //for debugging
     public static void main(String[] args) {
         write writeme = new write("it seems stuff is not working correctly",
-                "/home/linux/Documents/githubfolder/pictures/profile.png");
+                "/profile.png");
         writeme.writeInformationToNewImage();
         writeme.picture.show();
     }
 
-    public static final int LSB_CONST = 2; //in this program we're only working with 2 LSB. feel free to modify
-    protected String binary;
-    protected Picture picture;
-    protected LinkedList<point> pointsList;
-    protected ArrayList<String> holdingNextBits;
-    protected LinkedList<String> allBits;
-    protected Random random;
-    protected String input;
+    private static final int LSB_CONST = 2; //in this program we're only working with 2 LSB. feel free to modify
+    private Picture picture;
+    private LinkedList<point> pointsList;
+    private LinkedList<String> allBits;
+    private Random random;
+    private String input;
 
     write(String input, String imageLocation) {
-
         if (input.equals("") || input.equals(null))
             throw new IllegalArgumentException("constructor argument is null");
         if (imageLocation.equals("") || imageLocation.equals(null))
@@ -32,12 +29,9 @@ public class write {
 
         this.input = input;
         this.pointsList = new LinkedList<point>();
-        this.holdingNextBits = new ArrayList<String>();
         this.random = new Random();
         this.picture = new Picture(imageLocation);
         this.allBits = new LinkedList<String>();
-        this.binary = "";
-
     }
 
     /**
@@ -45,8 +39,7 @@ public class write {
      * Ensures that there is enough space and allBits (the binary bits) we will be using
      * is empty.
      */
-    private boolean setWords() //returns true if successful false if it wont fit in image.
-    {
+    private boolean setWords(){ //returns true if successful false if it wont fit in image.
         //test if theres enough room in an image for a string
         if (!checkEnoughSpace()) // 3 different pixels.
             throw new IllegalArgumentException("not enough space in image");
@@ -64,6 +57,10 @@ public class write {
         if ((input.length() * 8 + 8) > (picture.height() * picture.width() * LSB_CONST * 3)) // 3 different pixels.
             return false;
         return true;
+    }
+
+    protected void showPicture(){
+        this.picture.show();
     }
 
 

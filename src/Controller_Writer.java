@@ -96,7 +96,7 @@ public class Controller_Writer {
             return;
         }
 
-        writeObject.picture.show();
+        writeObject.showPicture();
     }
 
     /**From
@@ -107,8 +107,9 @@ public class Controller_Writer {
     public static boolean containsIllegals(String toExamine) {
         if(toExamine.equals(""))
             return true;
-        String[] arr = toExamine.split("[~#@*+%{}<>\\[\\]|\"\\_^]", 2);
-        return arr.length > 1;
+        //String[] arr = toExamine.split("[~#@*+%{}<>\\[\\]|\"\\_^]", 2);
+        //return arr.length > 1;
+        return false; //in process of finding characters to prohibit, such as ascii code 27.
     }
 
 }

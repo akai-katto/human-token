@@ -14,10 +14,10 @@ public abstract class Binary {
     protected int bits;
     protected String binaryStr;
 
-
     /**
      * Java Work-Around, if we need to insantiate a binary to be null, it will be n.. for any amount
-     * of zzz's needed. Functions are written with a throw if binaryStr contains nnnn.
+     * of zzz's needed. Functions are written with a throw if binaryStr contains nnnn. Explains why inherited objects
+     * always instantiate "nn"
      */
     public Binary(int bits, String binaryStr) {
         if (binaryStr.length() != bits)
@@ -45,7 +45,7 @@ public abstract class Binary {
      *
      * @param otherBinary must be smaller than the given binary.
      */
-    public void changeLSB(Binary otherBinary) {
+    protected void changeLSB(Binary otherBinary) {
         if (otherBinary.getBits() >= this.bits)
             throw new IllegalArgumentException("illegal binary operation, otherbits size:  " + otherBinary.getBits()
                     + ". This.binary size: " + this.bits + ". other must be smaller");
@@ -65,7 +65,7 @@ public abstract class Binary {
      * Given another set of bits and its representation, replace the LSB of this binary
      * 1111111 -> lsb(2,00) -> 11111100
      */
-    public void changeLSB(int otherBits, String otherBinary) {
+    protected void changeLSB(int otherBits, String otherBinary) {
         if (otherBits >= this.bits || otherBinary.length() > this.bits)
             throw new IllegalArgumentException("illegal binary operation, otherbits size:  " + otherBits
                     + ". This.binary size: " + this.bits + ". other must be smaller");
@@ -82,11 +82,11 @@ public abstract class Binary {
             throw new ArithmeticException("LSB changed does not equal to original binary");
     }
 
-    public int getBits() {
+    protected int getBits() {
         return bits;
     }
 
-    public String getBinaryStr() {
+    protected String getBinaryStr() {
         return binaryStr;
     }
 
@@ -98,7 +98,7 @@ public abstract class Binary {
      * @param lsbBits
      * @return
      */
-    public String getLSB(int lsbBits) {
+    protected String getLSB(int lsbBits) {
         throwIfNull();
         if (this.binaryStr.length() < lsbBits)
             throw new IllegalArgumentException("trying to retrieve lsb of a binary " +
@@ -110,7 +110,7 @@ public abstract class Binary {
 
 
     //easy function to call to see if we can work with binaryStr or not
-    public void throwIfNull() {
+    protected void throwIfNull() {
         if (this.binaryStr.contains("n"))
             throw new IllegalArgumentException("binary representation is null (contain's n's)");
     }

@@ -9,7 +9,7 @@ public class imageWriterDriver extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("writeGUI.fxml"));
-        primaryStage.setTitle("Image Reader");
+        primaryStage.setTitle("Image Writer");
         primaryStage.setScene(new Scene(root, 297, 389));
         primaryStage.setResizable(false);
         primaryStage.show();

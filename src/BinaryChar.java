@@ -28,6 +28,7 @@ public class BinaryChar extends Binary{
                 zeros += "0";
             binaryVal = zeros + binaryVal;
         }
+
         super.binaryStr = binaryVal;
         if (Integer.parseInt(super.binaryStr, 2) != (int) this.charVal)
             throw new NumberFormatException("Binary does not equal inputted value");
@@ -59,7 +60,7 @@ public class BinaryChar extends Binary{
             throw new IllegalArgumentException("Illegal argument: chunks either non zero or bigger than the LSB");
         if(this.bits%chunksOf!=0)
             throw new IllegalArgumentException("Illegal argument: chunks cannot have remainder");
-        throwIfNull();
+        super.throwIfNull();
 
         String regex = "(?<=\\G";
 

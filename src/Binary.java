@@ -15,9 +15,10 @@ public abstract class Binary {
     protected String binaryStr;
 
     /**
-     * Java Work-Around, if we need to insantiate a binary to be null, it will be n.. for any amount
-     * of zzz's needed. Functions are written with a throw if binaryStr contains nnnn. Explains why inherited objects
-     * always instantiate "nn"
+     * Note the exception for 'n' and why 'n' is always in inherited objects:
+     * The first call in an inherited object needs to be the super constructer. As a consequence,
+     * we cannot first parse the input (in some cases a char, in some cases an int) into a set of valid
+     * binary strings. So super is called with 'nnnnnn' for a set amount of n's, then is replaced later.
      */
     public Binary(int bits, String binaryStr) {
         if (binaryStr.length() != bits)
@@ -63,7 +64,7 @@ public abstract class Binary {
 
     /**
      * Given another set of bits and its representation, replace the LSB of this binary
-     * 1111111 -> lsb(2,00) -> 11111100
+     * i.e, 1111111 -> lsb(2,00) -> 11111100
      */
     protected void changeLSB(int otherBits, String otherBinary) {
         if (otherBits >= this.bits || otherBinary.length() > this.bits)
@@ -108,12 +109,28 @@ public abstract class Binary {
 
     }
 
+    /**
+     *We need to maintain the appropriate amount of digits when working with binary. For example,
+     * 52 is 110100. An integer contains 8 bits, so it needs be 00110100 instead.
+     *
+     * another example is 5 being 101, needs to be 00000101.
+     */
+    public String fillZeros(String binaryArg){
+        if (binaryArg.length() < this.bits) {
+            String zeros = "";
+            for (int a = 0; a < this.bits - binaryArg.length(); a++)
+                zeros += "0";
+            binaryArg = zeros + binaryArg;
+        }
 
-    //easy function to call to see if we can work with binaryStr or not
+        return binaryArg;
+    }
+
+    /**
+     * easy function to call to see if binaryStr that was instantiated is valid or not.
+     */
     protected void throwIfNull() {
         if (this.binaryStr.contains("n"))
             throw new IllegalArgumentException("binary representation is null (contain's n's)");
     }
-
-
 }

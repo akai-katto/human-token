@@ -23,27 +23,30 @@ public class read {
     }
 
     /**
-     * collects a string from the lsb of an image
-     **/
+     * collects a string from the lsb of an image*/
+
+    /**In english, only produce a char when there is enough elements in hiddenInfo to produce
+     * a char. Sometimes hiddenInfo will only contain 1-6 bits of information.
+     * Because a pixel only gives 3 lsbs of 2 bits each, and a char is 8 bits,
+     * there is going to be moments we cant extract a char.**/
     protected String extractInformation() {
         generatePoints(); //create points order to read from linearly
         String returnedInfo = ""; //create an empty string that we will be using to return chars
         point currentPoint;
         BinaryChar currentBinaryChar;
 
+        /** See method comment for explanation**/
         while (pointsList.peek() != null) {
             currentPoint = pointsList.pop();
             addColorToHiddenInfo(picture.get(currentPoint.getX(), currentPoint.getY()));
 
-            /**In english, only produce a char when there is enough elements in hiddenInfo to produce
-             * a char. Because a pixel only gives 3 lsbs of 2 bits each, and a char is 8 bits,
-             * there is going to be some overlap. For the time being 2 LSB's is hard coded, but
-             * can be later added to be varied**/
-            if (hiddenInfo.size() % (8 / LSB_CONST) == 0) {
+            if (hiddenInfo.size() % (8 / LSB_CONST) == 0) { /** Only add char when we can fully pop a char out **/
                 currentBinaryChar = new BinaryChar(hiddenInfo.pop() + hiddenInfo.pop()
-                        + hiddenInfo.pop() + hiddenInfo.pop());
+                                                  + hiddenInfo.pop() + hiddenInfo.pop());
+
                 if ((int) currentBinaryChar.getChar() == 27) /**If we hit an escape character..**/
                     break;
+
                 returnedInfo += currentBinaryChar.getChar(); /**add current char to a running list of added chars*/
             }
         }

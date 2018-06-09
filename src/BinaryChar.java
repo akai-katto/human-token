@@ -4,30 +4,38 @@ import java.util.Arrays;
 public class BinaryChar extends Binary{
 
 
-    //main for debugging
+    //test cases
     public static void main(String[] args){
-        BinaryChar cbin = new BinaryChar(' ');
-        System.out.println(cbin.toString());
-        ArrayList<String> binarySplit = cbin.splitBinary(2);
-        System.out.println(binarySplit);
-        System.out.println(cbin.charVal);
+        BinaryChar cbin1 = new BinaryChar('a');
+        BinaryChar cbin2 = new BinaryChar('7');
+
+        if(cbin1.getChar() != 'a')
+            System.out.print("test case 1 failed");
+
+        if(! cbin1.binaryStr.equals("01100001"))
+            System.out.print("test case 1 binary not equal");
+
+        if(cbin2.getChar() != '7')
+            System.out.print("test case 2 failed");
+
+        if(! cbin2.binaryStr.equals("00110111"))
+            System.out.print("test case 2 binary not equal");
+
+        cbin2.changeLSB(2,"00");
+        if(! cbin2.binaryStr.equals("00110100"))
+            System.out.print("change LSB not working");
+
     }
 
     protected char charVal;
     static final int charBITS = 8;
 
     public BinaryChar(char input){
-        super(charBITS,"nnnnnnnn"); //create null for now (super must be first statement, java quirk)
+        super(charBITS,"nnnnnnnn"); //create null for now (super must be first statement, see super constructer)
         this.charVal = input;
 
         String binaryVal = Integer.toString(input, 2); //convert to base 2
-
-        if (binaryVal.length() < charBITS) { //fills in rest of bits with zero to get appropriate binary
-            String zeros = "";
-            for (int a = 0; a < charBITS - binaryVal.length(); a++)
-                zeros += "0";
-            binaryVal = zeros + binaryVal;
-        }
+        binaryVal = super.fillZeros(binaryVal);
 
         super.binaryStr = binaryVal;
         if (Integer.parseInt(super.binaryStr, 2) != (int) this.charVal)
@@ -69,5 +77,4 @@ public class BinaryChar extends Binary{
         regex+=")";
         return new ArrayList<String>(Arrays.asList(this.binaryStr.split(regex)));
     }
-//stubbed
 }

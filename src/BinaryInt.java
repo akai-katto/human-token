@@ -2,9 +2,15 @@ public class BinaryInt extends Binary {
 
 
     public static void main(String[] args) {
-        BinaryInt binInt1 = new BinaryInt("00110111");
-        String lsb = binInt1.getLSB(2);
-        System.out.println(lsb);
+        BinaryInt binInt1 = new BinaryInt("00110111"); //55
+
+        if(binInt1.getNumericalVal() != 55)
+            System.out.print("test case 1 failed");
+
+        binInt1.changeLSB(2,"00"); //move 3 places down relative to 55
+
+        if(binInt1.getNumericalVal() != 52)
+            System.out.print("test case 1 LSB failed");
 
     }
 
@@ -18,13 +24,7 @@ public class BinaryInt extends Binary {
             throw new IllegalArgumentException("no negative integers for Binary Int");
 
         String binaryVal = Integer.toString(input, 2); //convert to base 2
-
-        if (binaryVal.length() < intBITS) { //fills in rest of bits with zero to get appropriate binary (e.g 111 = 0000111)
-            String zeros = "";
-            for (int a = 0; a < intBITS - binaryVal.length(); a++)
-                zeros += "0";
-            binaryVal = zeros + binaryVal;
-        }
+        binaryVal = super.fillZeros(binaryVal);
 
         super.binaryStr = binaryVal;
         numericalVal = input;

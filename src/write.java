@@ -39,9 +39,8 @@ public class write {
      * Ensures that there is enough space and allBits (the binary bits) we will be using
      * is empty.
      */
-    private boolean setWords(){ //returns true if successful false if it wont fit in image.
-        //test if theres enough room in an image for a string
-        if (!checkEnoughSpace()) // 3 different pixels.
+    private boolean setWords(){ //pre-recs for generating binary bits. Consider combining functions in future
+        if (!checkEnoughSpace())
             throw new IllegalArgumentException("not enough space in image");
         if (!allBits.isEmpty())
             allBits.clear();
@@ -49,9 +48,33 @@ public class write {
         allBits = generateBinaryBits(input);
         return true;
     }
-
     /**
-     * For validating user input
+     * Given a string, convert it to binary bits in chunks LSB_CONST.
+     * After it is done splitting the string, add an escape character,
+     * then fill in the remainder with random binary to keep the artificats of an image
+     * consistant
+     */
+    private LinkedList<String> generateBinaryBits(String message) {
+        LinkedList<String> returnedList = new LinkedList<String>();
+        String splitMessage[] = message.split("");
+
+        for (int a = 0; a < splitMessage.length; a++) {
+            BinaryChar charBin = new BinaryChar(splitMessage[a].charAt(0));
+            returnedList.addAll(charBin.splitBinary(LSB_CONST));
+        }
+
+        BinaryChar escChar = new BinaryChar("00011011"); //escape char.
+        returnedList.addAll(escChar.splitBinary(LSB_CONST)); //knows when to stop reading
+
+        for (int a = returnedList.size(); a < (picture.height() * picture.width()) * 3; a++)
+            returnedList.add(getRandomBinary());
+
+        return returnedList;
+    }
+    /**
+     * For validating user input.
+     * Equation is (length * 8 + 8) < (b*h * const * 3)
+     * 3 because 3 colors per pixel
      */
     protected boolean checkEnoughSpace() {
         if ((input.length() * 8 + 8) > (picture.height() * picture.width() * LSB_CONST * 3)) // 3 different pixels.
@@ -84,32 +107,6 @@ public class write {
 
     }
 
-    /**
-     * Given a string, convert it to binary bits in chunks LSB_CONST.
-     * After it is done splitting the string, add an escape character,
-     * then fill in the remainder with random binary to keep the artificats of an image
-     * consistant
-     *
-     * @param message
-     * @return
-     */
-    private LinkedList<String> generateBinaryBits(String message) {
-        LinkedList<String> returnedList = new LinkedList<String>();
-        String splitMessage[] = message.split("");
-
-        for (int a = 0; a < splitMessage.length; a++) {
-            BinaryChar charBin = new BinaryChar(splitMessage[a].charAt(0));
-            returnedList.addAll(charBin.splitBinary(LSB_CONST));
-        }
-
-        BinaryChar escChar = new BinaryChar("00011011"); //escape char.
-        returnedList.addAll(escChar.splitBinary(LSB_CONST)); //knows when to stop reading
-
-        for (int a = returnedList.size(); a < (picture.height() * picture.width()) * 3; a++)
-            returnedList.add(getRandomBinary());
-
-        return returnedList;
-    }
 
     /**
      * get random binary bits to fill in the rest of the pixels.

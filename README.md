@@ -13,17 +13,25 @@ Step 1:
 
 known: typo in gui name
 
-<img src="https://s22.postimg.cc/6qvwszsch/image.png" height="250">
+<img src="https://image.ibb.co/mTf6tT/1.png" height="250">
 
 Step 2:
 
-<img src="https://s22.postimg.cc/i38iay135/image.png" height="250">
+<img src="https://image.ibb.co/bZJFno/2.png" height="250">
 
 
 Step 3:
 
-<img src="https://s22.postimg.cc/fyo59xcc1/image.png" height="250">
+<img src="https://image.ibb.co/dnq6tT/3.png" height="250">
 
 Step 4:
 
-<img src="https://s22.postimg.cc/qa0i20bkx/image.png" height="250">
+<img src="https://image.ibb.co/gxQH08/4.png" height="250">
+
+Step 3:
+
+<img src="https://image.ibb.co/f4BqL8/5.png" height="250">
+
+Step 4:
+
+<img src="https://image.ibb.co/mO2KDT/6.png" height="250">

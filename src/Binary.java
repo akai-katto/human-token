@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public abstract class Binary {
 
 //for debugging, remove "abstract" to test individual features of binary
@@ -110,12 +113,34 @@ public abstract class Binary {
     }
 
     /**
+     * Splits a binaryString into discrete chunks (i.e 8 bits, input 4, will divide it into 4 unique chunks of 2 bits.
+     * Used for LSB where bits are divided between different pixels.
+     *
+     * see stackoverflow.com/questions/1085083/regular-expressions-in-c-examples for regex
+     * explanation of
+     *"(?<=\\G..)"
+     */
+    protected ArrayList<String> splitBinary(int chunksOf){
+        if(chunksOf <= 0 || chunksOf > this.bits)
+            throw new IllegalArgumentException("Illegal argument: chunks either non zero or bigger than the LSB");
+        if(this.bits%chunksOf!=0)
+            throw new IllegalArgumentException("Illegal argument: chunks cannot have remainder");
+        throwIfNull();
+
+        String regex = "(?<=\\G";
+
+        for(int x = 0; x < chunksOf; x++)
+            regex+=".";
+        regex+=")";
+        return new ArrayList<String>(Arrays.asList(this.binaryStr.split(regex)));
+    }
+    /**
      *We need to maintain the appropriate amount of digits when working with binary. For example,
      * 52 is 110100. An integer contains 8 bits, so it needs be 00110100 instead.
      *
      * another example is 5 being 101, needs to be 00000101.
      */
-    public String fillZeros(String binaryArg){
+    protected String fillZeros(String binaryArg){
         if (binaryArg.length() < this.bits) {
             String zeros = "";
             for (int a = 0; a < this.bits - binaryArg.length(); a++)

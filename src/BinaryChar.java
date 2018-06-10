@@ -58,23 +58,4 @@ public class BinaryChar extends Binary{
     }
 
 
-    /**
-     * see stackoverflow.com/questions/1085083/regular-expressions-in-c-examples for regex
-     * explanation of
-     *"(?<=\\G..)"
-     */
-    public ArrayList<String> splitBinary(int chunksOf){
-        if(chunksOf <= 0 || chunksOf > charBITS)
-            throw new IllegalArgumentException("Illegal argument: chunks either non zero or bigger than the LSB");
-        if(this.bits%chunksOf!=0)
-            throw new IllegalArgumentException("Illegal argument: chunks cannot have remainder");
-        super.throwIfNull();
-
-        String regex = "(?<=\\G";
-
-        for(int x = 0; x < chunksOf; x++)
-            regex+=".";
-        regex+=")";
-        return new ArrayList<String>(Arrays.asList(this.binaryStr.split(regex)));
-    }
 }

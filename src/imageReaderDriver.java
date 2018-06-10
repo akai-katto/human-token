@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 public class imageReaderDriver extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("readGUI.fxml"));
         primaryStage.setTitle("Image Reader");
-        primaryStage.setScene(new Scene(root, 297, 389));
+        primaryStage.setScene(new Scene(root, 634, 472));
         primaryStage.setResizable(false);
         primaryStage.show();
     }

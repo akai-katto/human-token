@@ -2,15 +2,44 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="writer:jar" />
+      <artifact name="reader:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/Stego1.0/readGUI.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stego1.0/writeGUI.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pictures/book.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pictures/example.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pictures/foriegn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pictures/largephoto.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pictures/photohidden.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/reader_jar/Stego1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/reader_jar/Stego1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/writer_jar/Stego1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/writer_jar/Stego1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stego1.0/Binary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stego1.0/Binary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stego1.0/BinaryChar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stego1.0/BinaryChar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stego1.0/BinaryInt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stego1.0/BinaryInt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stego1.0/imageReaderDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stego1.0/imageReaderDriver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stego1.0/imageWriterDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stego1.0/imageWriterDriver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stego1.0/read.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stego1.0/read.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stego1.0/write.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stego1.0/write.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pictures/android.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pictures/longerpicture.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/reader.jar" beforeDir="false" afterPath="$PROJECT_DIR$/reader.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Binary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Binary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BinaryChar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BinaryChar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BinaryInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BinaryInt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller_Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller_Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller_Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller_Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Picture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imageReaderDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/imageReaderDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imageWriterDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/imageWriterDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/read.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/read.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/readGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/readGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/write.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/write.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/writeGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/writeGUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/writer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/writer.jar" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -72,17 +101,20 @@
       <file leaf-file-name="imageReaderDriver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/imageReaderDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="285">
+              <caret line="21" column="1" selection-start-line="12" selection-start-column="54" selection-end-line="21" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller_Reader.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Controller_Reader.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller_Reader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="38" selection-start-column="38" selection-end-column="38" />
+            <state relative-caret-position="265">
+              <caret line="46" column="82" selection-start-line="46" selection-start-column="82" selection-end-line="46" selection-end-column="82" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,8 +122,8 @@
       <file leaf-file-name="Controller_Writer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller_Writer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1387">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
+            <state relative-caret-position="588">
+              <caret line="64" column="14" lean-forward="true" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,11 +134,8 @@
       <file leaf-file-name="write.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/write.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
-              <folding>
-                <element signature="e#2161#2169#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-1273">
+              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -114,8 +143,8 @@
       <file leaf-file-name="read.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/read.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="817">
-              <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
+            <state relative-caret-position="494">
+              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
             </state>
           </provider>
         </entry>
@@ -123,8 +152,8 @@
       <file leaf-file-name="BinaryChar.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BinaryChar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+            <state relative-caret-position="-247">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -132,8 +161,8 @@
       <file leaf-file-name="BinaryInt.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BinaryInt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-19">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="-664">
+              <caret line="9" selection-start-line="9" selection-end-line="15" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -141,19 +170,21 @@
       <file leaf-file-name="imageWriterDriver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/imageWriterDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+            <state relative-caret-position="304">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Binary.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Binary.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Binary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="133" column="19" selection-start-line="133" selection-start-column="19" selection-end-line="133" selection-end-column="19" />
+            <state relative-caret-position="134">
+              <caret line="38" column="65" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3520#3521#0" expanded="true" />
+                <element signature="e#3552#3553#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -165,7 +196,11 @@
     <findStrings>
       <find>stego</find>
       <find>binary</find>
+      <find>Confirmation Dialog</find>
     </findStrings>
+    <replaceStrings>
+      <replace>It's dangerous out there, that this.</replace>
+    </replaceStrings>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -178,28 +213,28 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Controller_Reader.java" />
         <option value="$PROJECT_DIR$/src/Picture.java" />
         <option value="$PROJECT_DIR$/src/point.java" />
         <option value="$PROJECT_DIR$/src/readGUI.fxml" />
         <option value="$PROJECT_DIR$/src/writeGUI.fxml" />
-        <option value="$PROJECT_DIR$/src/Controller_Writer.java" />
         <option value="$PROJECT_DIR$/src/imageReaderDriver.java" />
         <option value="$PROJECT_DIR$/src/imageWriterDriver.java" />
         <option value="$PROJECT_DIR$/src/write.java" />
-        <option value="$PROJECT_DIR$/src/BinaryInt.java" />
-        <option value="$PROJECT_DIR$/src/read.java" />
-        <option value="$PROJECT_DIR$/src/BinaryChar.java" />
         <option value="$PROJECT_DIR$/src/Binary.java" />
+        <option value="$PROJECT_DIR$/src/BinaryInt.java" />
+        <option value="$PROJECT_DIR$/src/BinaryChar.java" />
+        <option value="$PROJECT_DIR$/src/read.java" />
+        <option value="$PROJECT_DIR$/src/Controller_Writer.java" />
+        <option value="$PROJECT_DIR$/src/Controller_Reader.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1920" />
-    <option name="y" value="361" />
-    <option name="width" value="1910" />
-    <option name="height" value="787" />
+    <option name="x" value="1726" />
+    <option name="y" value="317" />
+    <option name="width" value="1717" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -210,9 +245,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -229,6 +263,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -264,14 +299,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.imageWriterDriver">
+  <component name="RunManager" selected="Application.imageReaderDriver">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-    </configuration>
-    <configuration name="BinaryChar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BinaryChar" />
-      <module name="Stego1.0" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
     <configuration name="BinaryInt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BinaryInt" />
@@ -306,6 +336,11 @@
     </configuration>
     <configuration name="read" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="read" />
+      <module name="Stego1.0" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="write" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="write" />
       <module name="Stego1.0" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -370,16 +405,16 @@
       <item itemvalue="Application.read" />
       <item itemvalue="Application.imageReaderDriver" />
       <item itemvalue="Application.imageWriterDriver" />
-      <item itemvalue="Application.BinaryChar" />
       <item itemvalue="Application.BinaryInt" />
+      <item itemvalue="Application.write" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.imageWriterDriver" />
         <item itemvalue="Application.imageReaderDriver" />
+        <item itemvalue="Application.imageWriterDriver" />
         <item itemvalue="Application.read" />
+        <item itemvalue="Application.write" />
         <item itemvalue="Application.BinaryInt" />
-        <item itemvalue="Application.BinaryChar" />
       </list>
     </recent_temporary>
   </component>
@@ -412,17 +447,18 @@
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="Event Log" order="15" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="10" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3279743" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3279743" />
       <window_info anchor="bottom" id="Version Control" order="15" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.209375" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.209375" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="right" id="JetGradle" order="10" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -433,7 +469,6 @@
       <window_info anchor="bottom" id="Profiler" order="15" />
       <window_info anchor="bottom" id="Problems" order="15" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Application Servers" order="15" />
       <window_info anchor="right" id="Database" order="10" />
     </layout>
@@ -447,7 +482,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="5" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -698,72 +733,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller_Writer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1387">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller_Reader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/imageReaderDriver.java">
+    <entry file="file://$PROJECT_DIR$/src/imageWriterDriver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/imageWriterDriver.java">
+    <entry file="file://$PROJECT_DIR$/src/Binary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/read.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/write.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+        <state relative-caret-position="134">
+          <caret line="38" column="65" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="65" />
           <folding>
-            <element signature="e#2161#2169#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3520#3521#0" expanded="true" />
+            <element signature="e#3552#3553#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BinaryInt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="-664">
+          <caret line="9" selection-start-line="9" selection-end-line="15" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BinaryChar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+        <state relative-caret-position="-247">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Binary.java">
+    <entry file="file://$PROJECT_DIR$/src/write.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="133" column="19" selection-start-line="133" selection-start-column="19" selection-end-line="133" selection-end-column="19" />
+        <state relative-caret-position="-1273">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/read.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller_Writer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="64" column="14" lean-forward="true" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/imageReaderDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="1" selection-start-line="12" selection-start-column="54" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller_Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="46" column="82" selection-start-line="46" selection-start-column="82" selection-end-line="46" selection-end-column="82" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

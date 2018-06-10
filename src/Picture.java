@@ -20,48 +20,48 @@ import javax.swing.KeyStroke;
 
 
 /**
- *  This class provides methods for manipulating individual pixels of
- *  an image using the RGB color format. The alpha component (for transparency)
- *  is not currently supported.
- *  The original image can be read from a {@code PNG}, {@code GIF},
- *  or {@code JPEG} file or the user can create a blank image of a given dimension.
- *  This class includes methods for displaying the image in a window on
- *  the screen or saving it to a file.
- *  <p>
- *  Pixel (<em>col</em>, <em>row</em>) is column <em>col</em> and row <em>row</em>.
- *  By default, the origin (0, 0) is the pixel in the top-left corner,
- *  which is a common convention in image processing.
- *  The method {@link #setOriginLowerLeft()} change the origin to the lower left.
- *  <p>
- *  The {@code get()} and {@code set()} methods use {@link Color} objects to get
- *  or set the color of the specified pixel.
- *  The {@code getRGB()} and {@code setRGB()} methods use a 32-bit {@code int}
- *  to encode the color, thereby avoiding the need to create temporary
- *  {@code Color} objects. The red (R), green (G), and blue (B) components
- *  are encoded using the least significant 24 bits.
- *  Given a 32-bit {@code int} encoding the color, the following code extracts
- *  the RGB components:
+ * This class provides methods for manipulating individual pixels of
+ * an image using the RGB color format. The alpha component (for transparency)
+ * is not currently supported.
+ * The original image can be read from a {@code PNG}, {@code GIF},
+ * or {@code JPEG} file or the user can create a blank image of a given dimension.
+ * This class includes methods for displaying the image in a window on
+ * the screen or saving it to a file.
+ * <p>
+ * Pixel (<em>col</em>, <em>row</em>) is column <em>col</em> and row <em>row</em>.
+ * By default, the origin (0, 0) is the pixel in the top-left corner,
+ * which is a common convention in image processing.
+ * The method {@link #setOriginLowerLeft()} change the origin to the lower left.
+ * <p>
+ * The {@code get()} and {@code set()} methods use {@link Color} objects to get
+ * or set the color of the specified pixel.
+ * The {@code getRGB()} and {@code setRGB()} methods use a 32-bit {@code int}
+ * to encode the color, thereby avoiding the need to create temporary
+ * {@code Color} objects. The red (R), green (G), and blue (B) components
+ * are encoded using the least significant 24 bits.
+ * Given a 32-bit {@code int} encoding the color, the following code extracts
+ * the RGB components:
  * <blockquote><pre>
  *  int r = (rgb >> 16) & 0xFF;
  *  int g = (rgb >>  8) & 0xFF;
  *  int b = (rgb >>  0) & 0xFF;
  *  </pre></blockquote>
- *  Given the RGB components (8-bits each) of a color,
- *  the following statement packs it into a 32-bit {@code int}:
+ * Given the RGB components (8-bits each) of a color,
+ * the following statement packs it into a 32-bit {@code int}:
  * <blockquote><pre>
  *  int rgb = (r << 16) + (g << 8) + (b << 0);
  * </pre></blockquote>
- *  <p>
- *  A <em>W</em>-by-<en>H</em> picture uses ~ 4 <em>W H</em> bytes of memory,
- *  since the color of each pixel is encoded as a 32-bit <code>int</code>.
- *  <p>
- *  For additional documentation, see
- *  <a href="https://introcs.cs.princeton.edu/31datatype">Section 3.1</a> of
- *  <i>Computer Science: An Interdisciplinary Approach</i>
- *  by Robert Sedgewick and Kevin Wayne.
+ * <p>
+ * A <em>W</em>-by-<en>H</em> picture uses ~ 4 <em>W H</em> bytes of memory,
+ * since the color of each pixel is encoded as a 32-bit <code>int</code>.
+ * <p>
+ * For additional documentation, see
+ * <a href="https://introcs.cs.princeton.edu/31datatype">Section 3.1</a> of
+ * <i>Computer Science: An Interdisciplinary Approach</i>
+ * by Robert Sedgewick and Kevin Wayne.
  *
- *  @author Robert Sedgewick
- *  @author Kevin Wayne
+ * @author Robert Sedgewick
+ * @author Kevin Wayne
  */
 public final class Picture implements ActionListener {
     private BufferedImage image;               // the rasterized image
@@ -74,15 +74,15 @@ public final class Picture implements ActionListener {
      * Creates a {@code width}-by-{@code height} picture, with {@code width} columns
      * and {@code height} rows, where each pixel is black.
      *
-     * @param width the width of the picture
+     * @param width  the width of the picture
      * @param height the height of the picture
      * @throws IllegalArgumentException if {@code width} is negative
      * @throws IllegalArgumentException if {@code height} is negative
      */
     public Picture(int width, int height) {
-        if (width  < 0) throw new IllegalArgumentException("width must be non-negative");
+        if (width < 0) throw new IllegalArgumentException("width must be non-negative");
         if (height < 0) throw new IllegalArgumentException("height must be non-negative");
-        this.width  = width;
+        this.width = width;
         this.height = height;
         image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         // set to TYPE_INT_ARGB here and in next constructor to support transparency
@@ -91,13 +91,13 @@ public final class Picture implements ActionListener {
     /**
      * Creates a new picture that is a deep copy of the argument picture.
      *
-     * @param  picture the picture to copy
+     * @param picture the picture to copy
      * @throws IllegalArgumentException if {@code picture} is {@code null}
      */
     public Picture(Picture picture) {
         if (picture == null) throw new IllegalArgumentException("constructor argument is null");
 
-        width  = picture.width();
+        width = picture.width();
         height = picture.height();
         image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         filename = picture.filename;
@@ -110,7 +110,7 @@ public final class Picture implements ActionListener {
     /**
      * Creates a picture by reading an image from a file or URL.
      *
-     * @param  filename the name of the file (.png, .gif, or .jpg) or URL.
+     * @param filename the name of the file (.png, .gif, or .jpg) or URL.
      * @throws IllegalArgumentException if cannot read image
      * @throws IllegalArgumentException if {@code filename} is {@code null}
      */
@@ -138,10 +138,9 @@ public final class Picture implements ActionListener {
                 throw new IllegalArgumentException("could not read image file: " + filename);
             }
 
-            width  = image.getWidth(null);
+            width = image.getWidth(null);
             height = image.getHeight(null);
-        }
-        catch (IOException ioe) {
+        } catch (IOException ioe) {
             throw new IllegalArgumentException("could not open image file: " + filename, ioe);
         }
     }
@@ -158,14 +157,13 @@ public final class Picture implements ActionListener {
 
         try {
             image = ImageIO.read(file);
-        }
-        catch (IOException ioe) {
+        } catch (IOException ioe) {
             throw new IllegalArgumentException("could not open file: " + file, ioe);
         }
         if (image == null) {
             throw new IllegalArgumentException("could not read file: " + file);
         }
-        width  = image.getWidth(null);
+        width = image.getWidth(null);
         height = image.getHeight(null);
         filename = file.getName();
     }
@@ -216,12 +214,11 @@ public final class Picture implements ActionListener {
             frame.setJMenuBar(menuBar);
 
 
-
             frame.setContentPane(getJLabel());
             // f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             if (filename == null) frame.setTitle(width + "-by-" + height);
-            else                  frame.setTitle(filename);
+            else frame.setTitle(filename);
             frame.setResizable(false);
             frame.pack();
             frame.setVisible(true);
@@ -288,14 +285,14 @@ public final class Picture implements ActionListener {
         validateColumnIndex(col);
         validateRowIndex(row);
         if (isOriginUpperLeft) return image.getRGB(col, row);
-        else                   return image.getRGB(col, height - row - 1);
+        else return image.getRGB(col, height - row - 1);
     }
 
     /**
      * Sets the color of pixel ({@code col}, {@code row}) to given color.
      *
-     * @param col the column index
-     * @param row the row index
+     * @param col   the column index
+     * @param row   the row index
      * @param color the color
      * @throws IllegalArgumentException unless both {@code 0 <= col < width} and {@code 0 <= row < height}
      * @throws IllegalArgumentException if {@code color} is {@code null}
@@ -320,7 +317,7 @@ public final class Picture implements ActionListener {
         validateColumnIndex(col);
         validateRowIndex(row);
         if (isOriginUpperLeft) image.setRGB(col, row, rgb);
-        else                   image.setRGB(col, height - row - 1, rgb);
+        else image.setRGB(col, height - row - 1, rgb);
     }
 
     /**
@@ -328,14 +325,14 @@ public final class Picture implements ActionListener {
      *
      * @param other the other picture
      * @return {@code true} if this picture is the same dimension as {@code other}
-     *         and if all pixels have the same color; {@code false} otherwise
+     * and if all pixels have the same color; {@code false} otherwise
      */
     public boolean equals(Object other) {
         if (other == this) return true;
         if (other == null) return false;
         if (other.getClass() != this.getClass()) return false;
         Picture that = (Picture) other;
-        if (this.width()  != that.width())  return false;
+        if (this.width() != that.width()) return false;
         if (this.height() != that.height()) return false;
         for (int col = 0; col < width(); col++)
             for (int row = 0; row < height(); row++)
@@ -353,12 +350,12 @@ public final class Picture implements ActionListener {
      */
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(width +"-by-" + height + " picture (RGB values given in hex)\n");
+        sb.append(width + "-by-" + height + " picture (RGB values given in hex)\n");
         for (int row = 0; row < height; row++) {
             for (int col = 0; col < width; col++) {
                 int rgb = 0;
                 if (isOriginUpperLeft) rgb = image.getRGB(col, row);
-                else                   rgb = image.getRGB(col, height - row - 1);
+                else rgb = image.getRGB(col, height - row - 1);
                 sb.append(String.format("#%06X ", rgb & 0xFFFFFF));
             }
             sb.append("\n");
@@ -392,7 +389,7 @@ public final class Picture implements ActionListener {
     /**
      * Saves the picture to a file in a PNG or JPEG image format.
      *
-     * @param  file the file
+     * @param file the file
      * @throws IllegalArgumentException if {@code file} is {@code null}
      */
     public void save(File file) {
@@ -403,12 +400,10 @@ public final class Picture implements ActionListener {
         if ("jpg".equalsIgnoreCase(suffix) || "png".equalsIgnoreCase(suffix)) {
             try {
                 ImageIO.write(image, suffix, file);
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else {
+        } else {
             System.out.println("Error: filename must end in .jpg or .png");
         }
     }

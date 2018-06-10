@@ -25,36 +25,41 @@ public class Controller_Reader {
     }
 
 
-    /**Write information driver for gui */
-    static String readObject(String location){
+    /**
+     * Write information driver for gui
+     */
+    static String readObject(String location) {
 
         Picture picture;
         boolean imageIsValid = false;
 
         /*** Get a valid user input*/
-        do{
-            try{
+        do {
+            try {
                 picture = new Picture(location);
                 imageIsValid = true;
-            } catch(IllegalArgumentException e){
+            } catch (IllegalArgumentException e) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirmation Dialog");
-                alert.setHeaderText("Look, a Confirmation Dialog");
-                alert.setContentText("Image location is not valid. Try again.\n " +
-                                     "-check if file type is accepted, or image is not corrupted");
+                alert.setTitle("Warning");
+                alert.setHeaderText("Look, a It's dangerous out there, that this. ");
+                alert.setContentText("Image location is not valid. Try again. \n" +
+                        "-check if file type is accepted, or image is not corrupted." +
+                        "Also picture may or may not actually contain information.");
+                alert.setResizable(true);
+                alert.getDialogPane().setPrefSize(480, 320);
                 alert.show();
                 return "invalid input URL"; //go back
             }
-        }while(!imageIsValid);
+        } while (!imageIsValid);
 
         read readObject;
 
         try {
             readObject = new read(location);
-        } catch(IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Confirmation Dialog");
-            alert.setHeaderText("Look, a Confirmation Dialog");
+            alert.setTitle("Warning");
+            alert.setHeaderText("Look, a It's dangerous out there, that this. ");
             alert.setContentText("Error instantiating read object" + e.toString());
             alert.show();
             return "Error trying to read image: instantiating read object error";
@@ -63,10 +68,10 @@ public class Controller_Reader {
         String output;
         try {
             output = readObject.extractInformation();
-        } catch(IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Confirmation Dialog");
-            alert.setHeaderText("Look, a Confirmation Dialog");
+            alert.setTitle("Warning");
+            alert.setHeaderText("Look, a It's dangerous out there, that this. ");
             alert.setContentText("Error reading image:  " + e.toString());
             alert.show();
             return "Error from reading image";
@@ -79,9 +84,11 @@ public class Controller_Reader {
      * /** From https://stackoverflow.com/questions/14635391/
      * java-function-to-return-if-string-contains-illegal-characters*/
 
-    /**hopefully the name of this method doesnt put me on uc berkeleys's exclusion list */
+    /**
+     * hopefully the name of this method doesnt put me on uc berkeleys's exclusion list
+     */
     public static boolean containsIllegals(String toExamine) {
-        if(toExamine.equals(""))
+        if (toExamine.equals(""))
             return true;
         String[] arr = toExamine.split("[~#@*+%{}<>\\[\\]|\"\\_^]", 2);
         return arr.length > 1;

@@ -1,15 +1,16 @@
 public class BinaryInt extends Binary {
 
 
+    //test cases / debugging
     public static void main(String[] args) {
         BinaryInt binInt1 = new BinaryInt("00110111"); //55
 
-        if(binInt1.getNumericalVal() != 55)
+        if (binInt1.getNumericalVal() != 55)
             System.out.print("test case 1 failed");
 
-        binInt1.changeLSB(2,"00"); //move 3 places down relative to 55
+        binInt1.changeLSB(2, "00"); //move 3 places down relative to 55
 
-        if(binInt1.getNumericalVal() != 52)
+        if (binInt1.getNumericalVal() != 52)
             System.out.print("test case 1 LSB failed");
 
     }
@@ -24,10 +25,10 @@ public class BinaryInt extends Binary {
             throw new IllegalArgumentException("no negative integers for Binary Int");
 
         String binaryVal = Integer.toString(input, 2); //convert to base 2
-        binaryVal = super.fillZeros(binaryVal);
+        binaryVal = super.fillZeros(binaryVal); //fill in zeros where appropriate
 
         super.binaryStr = binaryVal;
-        numericalVal = input;
+        this.numericalVal = input;
 
         if (Integer.parseInt(super.binaryStr, 2) != this.numericalVal)
             throw new NumberFormatException("Binary does not equal inputted value");
@@ -35,16 +36,16 @@ public class BinaryInt extends Binary {
     }
 
     /**
-    Create a BinaryInt object from a binary
+     * Create a BinaryInt object from a binary
      */
-    public BinaryInt(String binary){
+    public BinaryInt(String binary) {
         super(intBITS, binary);
 
-        numericalVal = Integer.parseInt(binary, 2);
+        this.numericalVal = Integer.parseInt(binary, 2);
         //put a throw here
     }
 
-    public int getNumericalVal(){
+    public int getNumericalVal() {
         return numericalVal;
     }
 
@@ -56,8 +57,8 @@ public class BinaryInt extends Binary {
 
     //updates numerical value in binaryInt when lsb is called
     @Override
-    public void changeLSB(int otherBits, String otherBinary){
-        super.changeLSB(otherBits,otherBinary);
+    public void changeLSB(int otherBits, String otherBinary) {
+        super.changeLSB(otherBits, otherBinary);
         this.numericalVal = Integer.parseInt(super.binaryStr, 2);
     }
 

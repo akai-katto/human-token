@@ -1,14 +1,12 @@
 import java.awt.Point;
 
-public class point
-{
+public class point {
     private int x;
     private int y;
 
-    public point(int x, int y)
-    {
-        this.x= x;
-        this.y= y;
+    public point(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     public int getX() {

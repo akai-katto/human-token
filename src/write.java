@@ -8,8 +8,8 @@ public class write {
 
     //for debugging
     public static void main(String[] args) {
-        write writeme = new write("it seems stuff is not working correctly",
-                "/profile.png");
+        write writeme = new write("日本語をはなしませんですか",
+                "./pictures/picture.png");
         writeme.writeInformationToNewImage();
         writeme.picture.show();
     }
@@ -20,6 +20,7 @@ public class write {
     private LinkedList<String> allBits;
     private Random random;
     private String input;
+    private static final int charBits = 16;
 
     write(String input, String imageLocation) {
         if (input.equals("") || input.equals(null))
@@ -39,7 +40,7 @@ public class write {
      * Ensures that there is enough space and allBits (the binary bits) we will be using
      * is empty.
      */
-    private boolean setWords(){ //pre-recs for generating binary bits. Consider combining functions in future
+    private boolean setWords() { //pre-recs for generating binary bits. Consider combining functions in future
         if (!checkEnoughSpace())
             throw new IllegalArgumentException("not enough space in image");
         if (!allBits.isEmpty())
@@ -48,6 +49,7 @@ public class write {
         allBits = generateBinaryBits(input);
         return true;
     }
+
     /**
      * Given a string, convert it to binary bits in chunks LSB_CONST.
      * After it is done splitting the string, add an escape character,
@@ -63,7 +65,7 @@ public class write {
             returnedList.addAll(charBin.splitBinary(LSB_CONST));
         }
 
-        BinaryChar escChar = new BinaryChar("00011011"); //escape char.
+        BinaryChar escChar = new BinaryChar("0000000000011011"); //escape char.
         returnedList.addAll(escChar.splitBinary(LSB_CONST)); //knows when to stop reading
 
         for (int a = returnedList.size(); a < (picture.height() * picture.width()) * 3; a++)
@@ -71,18 +73,20 @@ public class write {
 
         return returnedList;
     }
+
     /**
      * For validating user input.
-     * Equation is (length * 8 + 8) < (b*h * const * 3)
+     * Equation is (length * 16 + 16) < (b*h * const * 3)
+     * 16*length because each char takes 16 bits, plus exit char.
      * 3 because 3 colors per pixel
      */
     protected boolean checkEnoughSpace() {
-        if ((input.length() * 8 + 8) > (picture.height() * picture.width() * LSB_CONST * 3)) // 3 different pixels.
+        if (((input.length() * charBits) + charBits) > (picture.height() * picture.width() * LSB_CONST * 3)) // 3 different pixels.
             return false;
         return true;
     }
 
-    protected void showPicture(){
+    protected void showPicture() {
         this.picture.show();
     }
 

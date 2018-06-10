@@ -3,8 +3,10 @@ import java.awt.Color;
 
 public class read {
 
+
+    //for debugging
     public static void main(String[] args) {
-        read readme = new read("/newphoto.png");
+        read readme = new read("./pictures/foriegn.png");
         System.out.println(readme.extractInformation());
     }
 
@@ -12,6 +14,7 @@ public class read {
     private LinkedList<point> pointsList;
     private LinkedList<String> hiddenInfo;
     private static final int LSB_CONST = 2;
+    private static final int charBits = 16;
 
     /* Constructor */
     public read(String pictureLocation) {
@@ -25,10 +28,16 @@ public class read {
     /**
      * collects a string from the lsb of an image*/
 
-    /**In english, only produce a char when there is enough elements in hiddenInfo to produce
-     * a char. Sometimes hiddenInfo will only contain 1-6 bits of information.
-     * Because a pixel only gives 3 lsbs of 2 bits each, and a char is 8 bits,
-     * there is going to be moments we cant extract a char.**/
+    /**
+     * In english, only produce a char when there is enough elements in hiddenInfo to produce
+     * a char. Sometimes hiddenInfo will only contain 1-15 bits of information.
+     * Because a pixel only gives 3 lsbs of 2 bits each, and a char is 16 bits, therfore
+     * there is going to be moments we cant extract a char.
+     * <p>
+     * So when there is enough time to extract (charBits / LSB_CONST) worth of bits from
+     * hiddenInfo, we use a for loop and create a string of the representation, create a char based
+     * on the string, and add the char to the decyphered string.
+     **/
     protected String extractInformation() {
         generatePoints(); //create points order to read from linearly
         String returnedInfo = ""; //create an empty string that we will be using to return chars
@@ -40,9 +49,13 @@ public class read {
             currentPoint = pointsList.pop();
             addColorToHiddenInfo(picture.get(currentPoint.getX(), currentPoint.getY()));
 
-            if (hiddenInfo.size() % (8 / LSB_CONST) == 0) { /** Only add char when we can fully pop a char out **/
-                currentBinaryChar = new BinaryChar(hiddenInfo.pop() + hiddenInfo.pop()
-                                                  + hiddenInfo.pop() + hiddenInfo.pop());
+            if (hiddenInfo.size() % (charBits / LSB_CONST) == 0) { /** Only add char when we can fully pop a char out **/
+
+                String binaryString = "";
+                for (int x = 0; x < charBits / LSB_CONST; x++)
+                    binaryString += hiddenInfo.pop();
+
+                currentBinaryChar = new BinaryChar(binaryString);
 
                 if ((int) currentBinaryChar.getChar() == 27) /**If we hit an escape character..**/
                     break;

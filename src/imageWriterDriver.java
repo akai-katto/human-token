@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 public class imageWriterDriver extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("writeGUI.fxml"));
         primaryStage.setTitle("Image Writer");
-        primaryStage.setScene(new Scene(root, 297, 389));
+        primaryStage.setScene(new Scene(root, 738, 568));
         primaryStage.setResizable(false);
         primaryStage.show();
     }

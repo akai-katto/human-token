@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Automated Chat</title>
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.4.2.js'></script>
+
+<script type='text/javascript'>//<![CDATA[
+$(window).load(function(){
+    $(document).ready(function() {
+      $("#typing").hide();
+      var n = "You:<br>";
+      var o = $('#outputWindow');
+      var i = $('#inputWindow');
+      var s = $('#sendButton');
+      var t = $('#typing');
+      var r = 0;
+
+      //arrays
+      var msg = ['msg0<br />','msg1<br />', 'msg2<br />', 'msg3<br />'];
+
+      //fire send events
+      $(s).click(function() {
+          i.hide();
+            s.hide();
+      runAI();
+      });
+      $(i).keydown(function(e) {
+      if (e.keyCode == 13) {
+            runAI();
+            i.hide();
+            s.hide();
+      }
+      });
+
+      function runAI() {
+      if (i.val().length > 0) {
+
+            r = r + 1;
+            o.html(o.html()+n+$("#inputWindow").val()+"<br><hr>" );
+            setTimeout(function(){ $("#typing").show();  }, 1000);
+            setTimeout(function(){ o.html(o.html()+"Username:<br>"+msg[r]+"<hr>") }, 3000);
+            setTimeout(function(){ $("#typing").hide();i.show();s.show();i.val(''); i.focus(); }, 3000);
+
+
+
+      }
+      }
+      i.focus();
+    });
+});//]]>
+
+</script>
+
+</head>
+<body>
+    <div class="container">
+    <div id="wrapper">
+      <div id="outputWindow"></div>
+      <input type="text" id="inputWindow"></input>
+      <input type="submit" id="sendButton" value="Send Message"/>
+      <div id="typing">Username is typing..</div>
+    </div>
+</body>
+</html>

@@ -1,4 +1,8 @@
 # human-token
+
+https://tylerszeto.github.io/human-token/
+
+
 a satircal way for me to learn etheruem smart contracts 
 
 This is a project I worked on between classes for about a week or so. I had it running on an actual website (humantoken.co) but I stopped paying rent money because I didn't have time to finish it up.
